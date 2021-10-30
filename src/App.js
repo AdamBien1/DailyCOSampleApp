@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import JoinMeeting from "./pages/JoinMeeting/JoinMeeting";
+import DailyState from "./context/DailyCO/DailyState";
+import AlertState from "./context/Alert/AlertState";
+import MeetingRoom from "./pages/MeetingRoom/MeetingRoom";
+import { GlobalReset } from "./helpers/GlobalReset.style";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DailyState>
+      <AlertState>
+        <GlobalReset />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={JoinMeeting} />
+            <Route exact path="/room/:id" component={MeetingRoom} />
+          </Switch>
+        </Router>
+      </AlertState>
+    </DailyState>
   );
 }
 

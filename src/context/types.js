@@ -1,0 +1,15 @@
+// DAILY
+export const GET_ROOM = "GET_ROOM";
+export const PARTICIPANTS_CHANGE = "PARTICIPANTS_CHANGE";
+export const CLICK_ALLOW_TIMEOUT = "CLICK_ALLOW_TIMEOUT";
+
+
+// ERRORS
+export const HARDWARE_ERROR = "HARDWARE_ERROR";
+export const FATAL_ERROR = "FATAL_ERROR";
+
+
+// OTHERS
+export const SET_ALERT = "SET_ALERT";
+export const CLEAR_ALERT = "CLEAR_ALERT";
+export const SET_LOADING = "SET_LOADING";
